@@ -10,4 +10,8 @@ class PostsController < ApplicationController
 	def new
 		@post = Post.new
 	end
+	def create
+		@post=Post.create(:title => params[:title] ,:description => params[:description])
+		redirect_to post_path(@post)
+	end
 end
